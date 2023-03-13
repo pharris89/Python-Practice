@@ -1,0 +1,29 @@
+# author: Paula Harris
+
+services = {'Oil Change': 35, 'Tire Rotation': 19, 'Car Wash': 7}
+
+
+salesTaxRate = 0.09
+
+
+avServices = ('Oil Change, Tire Rotation, and Car Wash')
+print('Available services include:\n', avServices)
+
+auto_service = str(input('Enter desired auto service:\n')).title()
+
+
+for key, value in services.items():
+    if key.lower() == auto_service or key.upper() == auto_service or key.capitalize() == auto_service or key == auto_service:
+        print('You entered: ', auto_service)
+        answer = input("Is this correct? Y/N\n")
+        salesTax = salesTaxRate * value
+        total = salesTax + value
+        if answer == "Y" or answer == "y":
+            print("Your total for this service is ", total)
+            
+        else:
+            print("I'm sorry. Please try again.")
+        break
+    else:
+        print('You entered:', auto_service)
+        print('Error: Requested service is not recognized')
